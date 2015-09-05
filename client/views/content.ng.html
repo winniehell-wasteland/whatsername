@@ -1,0 +1,25 @@
+<div layout="row">
+
+    <md-list class="names"
+             sv-root
+             sv-part="rankings"
+             sv-on-sort="storeRanking($item, $partFrom, $partTo, $indexFrom, $indexTo)">
+
+        <md-list-item ng-repeat="item in rankings"
+                      sv-element
+                      class="md-whiteframe-z2">
+            <p><span class="badge md-whiteframe-z2">{{ item.index }}</span> {{ item.name }}</p>
+        </md-list-item>
+
+    </md-list>
+
+    <md-list class="names" readonly>
+
+        <md-list-item ng-repeat="item in subscribedRankings | orderBy: 'index'"
+                      class="md-whiteframe-z2">
+            <p><span class="badge md-whiteframe-z2">{{ item.index }}</span> {{ item.name }}</p>
+        </md-list-item>
+
+    </md-list>
+
+</div>
